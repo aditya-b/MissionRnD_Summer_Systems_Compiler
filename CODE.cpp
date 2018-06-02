@@ -4,6 +4,7 @@
 #define E 0 
 int main()
 {
+register int AX,BX,CX,DX,EX,FX,GX,HX,IX;
 int B;
 int A;
 int C[4];
@@ -13,19 +14,22 @@ scanf("%d",&BX);
 A=AX;
 B=BX;
 CX=AX+BX;
+X:
 scanf("%d",&AX);
 DX=AX-BX;
-printf("%d",DX);
-printf("%d",CX);
+printf("%d\n",DX);
+printf("%d\n",CX);
 if(CX == DX)
 {
-C=CX;
-printf("%d",C);
-C=DX;
+C[0]=CX;
+printf("%d\n",C[0]);
+goto X;
 }
-else
-{
-printf("%d",C);
-printf("%d",E);
-return 0
+else{
+C[1]=DX;
+printf("%d\n",C[1]);
+goto X;
+}
+printf("%d\n",E);
+return 0;
 }
